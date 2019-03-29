@@ -39,7 +39,7 @@ def checkId(id):
 
 def checkGrade(grade):
     '检查输入成绩是否符合要求，这里假设成绩是0到100之间的整数'
-    if grade.isdight() and int(grade) >= 0 and int(grade) < 101:
+    if grade.isdigit() and int(grade) >= 0 and int(grade) < 101:
         return True
     else:
         return False

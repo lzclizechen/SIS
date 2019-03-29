@@ -8,6 +8,7 @@ def changeStudent(filepath):
         stuInfo = line.strip().split()
         stu = student.Student(stuInfo[0],int(stuInfo[1]), int(stuInfo[2]))
         studentList.append(stu)
+    print(len(studentList))
     f.close()
 
     if len(studentList) == 0:
@@ -16,6 +17,7 @@ def changeStudent(filepath):
 
     id = input('请输入学生ID：')
     idx = utils.searchStudentId(studentList, int(id))
+    print(id, idx)
     while idx >= len(studentList):
         id = input('学生信息没有找到， 请输入正确学生ID：')
         idx = utils.searchStudentId(studentList, int(id))
