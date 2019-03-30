@@ -14,3 +14,14 @@ Student Information System
 - “Django 的学生信息管理系统（Web）版”：这个版本，我会使用Django来开发，做成Web版。是不是有点期待。
 
 补充说明，本代码来自《Python程序案例课堂》，如有兴趣，欢迎阅读此书。并声明，本代码不可用于商业用途。
+
+
+
+
+
+## Date：2019-03-30
+
+1. 优化了代码结构，封装了获取txt文件里所有内容的函数为getAllStudent()。
+
+2. 解决了changStudent()里面，索引的问题。
+3. 给Student类增加了\_\_getitem\_\_()构造函数，可以用索引获取其内信息。
