@@ -1,15 +1,17 @@
 import student
 import utils
 
+def getIndex(studentList, id):
+    count = 0
+    for each in studentList:
+        if each.getStudentId() == id:
+            return count
+        else:
+            count += 1
+
 def changeStudent(filepath):
-    f = open(filepath, 'r')
-    studentList = []
-    for line in f.readlines():
-        stuInfo = line.strip().split()
-        stu = student.Student(stuInfo[0],int(stuInfo[1]), int(stuInfo[2]))
-        studentList.append(stu)
-    print(len(studentList))
-    f.close()
+    
+    studentList = utils.getAllStudent(filepath)
 
     if len(studentList) == 0:
         print('没有学生信息！请添加学生信息。')
@@ -17,8 +19,8 @@ def changeStudent(filepath):
 
     id = input('请输入学生ID：')
     idx = utils.searchStudentId(studentList, int(id))
-    print(id, idx)
-    while idx >= len(studentList):
+
+    while idx > int((studentList[-1])[1]):
         id = input('学生信息没有找到， 请输入正确学生ID：')
         idx = utils.searchStudentId(studentList, int(id))
 
@@ -27,7 +29,7 @@ def changeStudent(filepath):
     while not utils.checkGrade(grade):
         grade = input("格式错误！请输入正确成绩：")
 
-    studentList[idx].setStudentGrade(grade) 
+    studentList[getIndex(studentList, idx)].setStudentGrade(grade) 
     instruct = input('确定保存？ (Y/N)：')
     if instruct.lower() == 'y':  
         f = open(filepath, 'w')

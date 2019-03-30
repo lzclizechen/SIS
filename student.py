@@ -13,6 +13,9 @@ class Student():
         '将一个对象实例转换成一个字符串'
         return self.name + '\t' + str(self.id) + '\t' +str(self.grade)
 
+    def __getitem__(self,index):
+        return index
+
     def getStudentName(self):
         return self.name
     

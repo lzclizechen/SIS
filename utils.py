@@ -43,3 +43,13 @@ def checkGrade(grade):
         return True
     else:
         return False
+
+def getAllStudent(filepath):
+    f = open(filepath, 'r')
+    studentList = []
+    for line in f.readlines():
+        stuInfo = line.strip().split()
+        stu = student.Student(stuInfo[0],int(stuInfo[1]), int(stuInfo[2]))
+        studentList.append(stu)
+    f.close()
+    return studentList

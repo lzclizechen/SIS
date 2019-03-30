@@ -26,7 +26,7 @@ def main():
             exit(0)
         elif instruction == '1':
             addstudent.addStudent(filepath)
-        elif deletestudent == '2':
+        elif instruction == '2':
             deletestudent.deleteStudent(filepath)
         elif instruction == '3':
             changestudent.changeStudent(filepath)

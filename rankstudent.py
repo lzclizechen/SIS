@@ -1,13 +1,10 @@
 import student
+import utils
 
 def rankStudent(filepath):
-    f = open(filepath, 'r')
-    studentList = []
-    for line in f.readlines():
-        stuInfo = line.strip().split()
-        stu = student.Student(stuInfo[0],int(stuInfo[1]), int(stuInfo[2]))
-        studentList.append(stu)
-    f.close()
+    
+    studentList = utils.getAllStudent(filepath)
+    
 
     if len(studentList) == 0:
         print('没有学生信息！请添加学生信息。')
