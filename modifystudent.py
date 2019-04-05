@@ -27,7 +27,7 @@ def changeStudent(filepath):
         id_ = input('学生信息没有找到， 请输入正确学生ID：')
         idx = getIndex(studentList, int(id_))
 
-    choice = input("请选择要修改的内容：\n0：姓名\t1：ID\t2：性别\t3：年龄\t4：班级\t5:分数\n").replace(' ', '')
+    choice = input("请选择要修改的内容(0：姓名\t1：ID\t2：性别\t3：年龄\t4：班级\t5:分数)：").replace(' ', '')
     # 简单起见，只能修改分数。
     if choice == '0':
         name = input('请更改此学生的姓名：').replace(' ', '')
