@@ -11,7 +11,7 @@ def getIndex(studentList, id_):
             count += 1
     return count
 
-def changeStudent(filepath):
+def modifyStudent(filepath):
           
     #print("do_changeStudent")
     studentList = utils.fileRead(filepath)
@@ -22,12 +22,14 @@ def changeStudent(filepath):
 
     id_ = input('请输入学生ID：')
     idx = getIndex(studentList, int(id_))
-    print("id:"+str(id_), " ", "idx:"+str(idx), "len(stu):",str(len(studentList)))
+    #print("id:"+str(id_), " ", "idx:"+str(idx), "len(stu):",str(len(studentList)))
     while idx >= len(studentList):
         id_ = input('学生信息没有找到， 请输入正确学生ID：')
         idx = getIndex(studentList, int(id_))
 
-    choice = input("请选择要修改的内容(0：姓名\t1：ID\t2：性别\t3：年龄\t4：班级\t5:分数)").replace(' ', '')
+
+    choice = input("请选择要修改的内容(0：姓名 1：ID 2：性别 3：年龄 4：班级 5:分数)：").replace(' ', '')
+
     # 简单起见，只能修改分数。
     if choice == '0':
         name = input('请更改此学生的姓名：').replace(' ', '')
