@@ -1,8 +1,11 @@
 class Student():
-    def __init__(self, name, id, grade):
+    def __init__(self, name, id_, sex, age, class_, grade):
         '初始化函数'
         self.name = name
-        self.id = id
+        self.id_ = id_
+        self.sex = sex
+        self.age = age
+        self.class_ = class_
         self.grade = grade
 
     def __lt__(self, other):
@@ -11,7 +14,11 @@ class Student():
 
     def __str__(self):
         '将一个对象实例转换成一个字符串'
-        return self.name + '\t' + str(self.id) + '\t' +str(self.grade)
+        astring = ("%s\t%d\t%s\t%d\t%s\t%d"
+                   %
+                   (self.name, self.id_, self.sex, self.age, self.class_, self.grade))
+                    
+        return astring
 
     def __getitem__(self,index):
         return index
@@ -20,10 +27,34 @@ class Student():
         return self.name
     
     def getStudentId(self):
-        return self.id
+        return self.id_
+
+    def getStudentSex(self):
+        return self.sex
+
+    def getStudentAge(self):
+        return self.age
+
+    def getStudentClass(self):
+        return self.class_
 
     def getStudentGrade(self):
         return self.grade
+
+    def setStudentName(self, name):
+        self.name = name
+    
+    def setStudentId(self, id_):
+        self.id_ = id_
+
+    def setStudentSex(self, sex):
+        self.sex = sex
+
+    def setStudentAge(self, age):
+        self.sex = age
+
+    def setStudentClass(self, class_):
+        self.class_ = class_
 
     def setStudentGrade(self, grade):
         self.grade = grade

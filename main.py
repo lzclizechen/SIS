@@ -1,8 +1,8 @@
 import os
 import addstudent
 import deletestudent
-import rankstudent
-import changestudent
+import sortstudent
+import modifystudent
 
 filepath = 'student.txt'
 
@@ -17,7 +17,8 @@ def main():
         print('|  1：添加学生信息                                   |')
         print('|  2：删除学生信息                                   |')
         print('|  3：更改学生信息                                   |')
-        print('|  4：按成绩排序                                     |')
+        print('|  4：给学生排序                                     |')
+        print('|  5：使用帮助                                       |')
         print('|  0：退出                                           |')
         print(' ---------------------------------------------------- ')
 
@@ -29,9 +30,9 @@ def main():
         elif instruction == '2':
             deletestudent.deleteStudent(filepath)
         elif instruction == '3':
-            changestudent.changeStudent(filepath)
+            modifystudent.modifyStudent(filepath)
         elif instruction == '4':
-            rankstudent.rankStudent(filepath)
+            sortstudent.sortStudent(filepath)
         else:
             print('输入错误！ 请输入正确选项。')
 

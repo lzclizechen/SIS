@@ -3,7 +3,7 @@ import utils
 
 def deleteStudent(filepath):
     
-    studentList = utils.getAllStudent(filepath)
+    studentList = utils.fileRead(filepath)
 
     if len(studentList) == 0:
         print('没有学生信息！请添加学生信息。')
@@ -19,9 +19,7 @@ def deleteStudent(filepath):
     instruct = input('确定删除? (Y/N)：')
     if instruct.lower() == 'y':
         del studentList[idx]
-  
-        f = open(filepath, 'w')
-        for stu in studentList:
-            f.write(str(stu)+'\n')
-        f.close()
+
+        fileWrite(filepath, studentList)
+        
         print('保存')
