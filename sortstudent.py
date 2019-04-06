@@ -22,19 +22,19 @@ def sortStudent(filepath):
     if sortStandard == "姓名":
         sortedStudentList = sorted(studentList,
                                    key = lambda stut:stut.getStudentName(),
-                                   reverse = True)
+                                   reverse = False)
     elif sortStandard == "年龄":
         sortedStudentList = sorted(studentList,
                                    key = lambda stut:stut.getStudentAge(),
-                                   reverse = True)
+                                   reverse = False)
     elif sortStandard == "学号":
         sortedStudentList = sorted(studentList,
                                    key = lambda stut:stut.getStudentId(),
-                                   reverse = True)
+                                   reverse = False)
     elif sortStandard == "班级":
         sortedStudentList = sorted(studentList,
                                    key = lambda stut:stut.getStudentClass(),
-                                   reverse = True)
+                                   reverse = False)
     elif sortStandard == "性别":
         sortedStudentList = sorted(studentList,
                                    key = lambda stut:stut.getStudentSex(),
